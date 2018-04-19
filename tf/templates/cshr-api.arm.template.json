@@ -1,0 +1,265 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "siteName": {
+            "type": "string",
+            "defaultvalue": "${global__service_id}-${environment__name}-${application_name}",
+            "metadata": {
+                "description": "Name of azure web app"
+            }
+        },
+        "customHostname": {
+            "type": "string",
+            "defaultValue": "${global__service_id}-${environment__name}-${application_name}",
+            "metadata": {
+                "description": "The custom hostname that you wish to add."
+            }
+        },
+        "vaultResourceGroup": {
+            "type": "string",
+            "defaultvalue": "${app-service-cshr-api__vaultresourcegroup}"
+        },
+        "vaultName": {
+            "type": "string",
+            "defaultvalue": "${app-service-cshr-api__vaultname}"
+        },
+        "existingKeyVaultId": {
+            "type": "string",
+            "defaultvalue": "[resourceId(subscription().subscriptionId,  parameters('vaultResourceGroup'), 'Microsoft.KeyVault/vaults', parameters('vaultName'))]",
+            "metadata": {
+                "description": "Existing Key Vault resource Id with an access policy to allow Microsoft.Web RP to read Key Vault secrets (Checkout README.md for more information)"
+            }
+        },
+        "existingKeyVaultSecretName": {
+            "type": "string",
+            "defaultvalue": "${app-service-cshr-api__existingkeyvaultsecretname}",
+            "metadata": {
+                "description": "Key Vault Secret that contains a PFX certificate"
+            }
+        },
+        "certificateName": {
+            "type": "string",
+            "defaultvalue": "${app-service-cshr-api__certificatename}",
+            "metadata": {
+                "description": "User friendly certificate resource name"
+            }
+        },
+        "websiteCustomDomain": {
+            "type": "string",
+            "defaultvalue": "cshr.digital",
+            "metadata": {
+                "description": "Custom domain for creating SSL binding."
+            }
+        },
+        "websiteCustomName": {
+            "type": "string",
+            "defaultvalue": "${global__service_id}-${environment__name}-${application_name}",
+            "metadata": {
+                "description": "Custom hostname for creating SSL binding."
+            }
+        }
+  },
+  "variables": {
+    "hostingPlanName": "[concat(parameters('siteName'), 'serviceplan')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/certificates",
+      "name": "[parameters('certificateName')]",
+      "apiVersion": "2016-03-01",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "keyVaultId": "[parameters('existingKeyVaultId')]",
+        "keyVaultSecretName": "[parameters('existingKeyVaultSecretName')]",
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"
+      },
+      "dependsOn": [
+        "[variables('hostingPlanName')]"
+      ]
+    },
+    {
+      "apiVersion": "2016-09-01",
+      "name": "[variables('hostingPlanName')]",
+      "type": "Microsoft.Web/serverfarms",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "name": "[variables('hostingPlanName')]",
+        "workerSizeId": "1",
+        "reserved": true,
+        "numberOfWorkers": "1",
+        "hostingEnvironment": ""
+      },
+      "sku": {
+        "Tier": "Standard",
+        "Name": "S1"
+      },
+      "kind": "linux"
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "name": "[parameters('siteName')]",
+      "properties": {
+        "siteConfig": {
+          "appSettings": [
+            {
+                              "name": "DOCKER_CUSTOM_IMAGE_NAME",
+                              "value": "${app-service-cshr-api__docker_image}:${app-service-cshr-api__docker_image_tag}"
+                          },
+                          {
+                              "name" : "DOCKER_REGISTRY_SERVER_USERNAME",
+                              "value" : "${app-service-cshr-api__ENC_docker_registry_user}"
+                          },
+                          {
+                              "name" : "DOCKER_REGISTRY_SERVER_PASSWORD",
+                              "value" : "${app-service-cshr-api__ENC_docker_registry_password}"
+                          },
+
+                          {
+                                "name": "LOCATION_SERVICE_URL",
+                                "value": "${location_service_url}"
+                            },
+
+                        {
+                            "name": "LOCATION_SERVICE_USERNAME",
+                            "value": "${app-service-cshr-api__ENC_LOCATION_SERVICE_USERNAME}"
+                        },
+                        {
+                            "name": "LOCATION_SERVICE_PASSWORD",
+                            "value": "${app-service-cshr-api__ENC_LOCATION_SERVICE_PASSWORD}"
+                        },
+
+                        {
+                            "name": "SEARCH_USERNAME",
+                            "value": "${app-service-cshr-api__ENC_SEARCH_USERNAME}"
+                        },
+                        {
+                            "name": "SEARCH_PASSWORD",
+                            "value": "${app-service-cshr-api__ENC_SEARCH_PASSWORD}"
+                        },
+                        {
+                            "name": "CRUD_USERNAME",
+                            "value": "${app-service-cshr-api__ENC_CRUD_USERNAME}"
+                        },
+                        {
+                            "name": "CRUD_PASSWORD",
+                            "value": "${app-service-cshr-api__ENC_CRUD_PASSWORD}"
+                        },
+
+
+                            {
+                                "name": "DATASOURCE_URL",
+                                "value": "${datasource_url}"
+                            },
+                            {
+                                "name": "DATASOURCE_USERNAME",
+                                "value": "${app-service-cshr-api__ENC_datasource_username}"
+                            },
+                            {
+                                "name": "DATASOURCE_PASSWORD",
+                                "value": "${app-service-cshr-api__ENC_datasource_password}"
+                            },
+                         
+                          {
+                              "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+                              "value": "false"
+                          },
+                          {
+                              "name" : "WEBSITES_PORT",
+                              "value": 8080
+                          }
+                         
+          ]
+        },
+        "httpsOnly": true,
+        "name": "[parameters('siteName')]",
+        "serverFarmId": "[variables('hostingPlanName')]",
+        "hostingEnvironment": "",
+        "hostNameSslStates": [
+          {
+            "name": "[concat(parameters('websiteCustomName'),'.',parameters('websiteCustomDomain'))]",
+            "sslState": "SniEnabled",
+            "thumbprint": "[reference(resourceId('Microsoft.Web/certificates', parameters('certificateName'))).Thumbprint]",
+            "toUpdate": true,
+            "hostType": "Standard"
+          },
+          {
+            "name": "[concat(parameters('siteName'),'.azurewebsites.net')]",
+            "sslState": "Disabled",
+            "thumbprint": null,
+            "toUpdate": true,
+            "hostType": "Standard"
+          },
+          {
+            "name": "[concat(parameters('siteName'),'.scm.azurewebsites.net')]",
+            "sslState": "Disabled",
+            "thumbprint": null,
+            "toUpdate": true,
+            "hostType": "Standard"
+          }
+        ]
+      },
+      "apiVersion": "2016-03-01",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "environment": "${environment__name}",
+                "service_id": "${global__service_id}",
+                "deployed_by": "${global__deployed_by}",
+                "logical_name": "${application_name}",
+                "environment_branch": "${global__environment_version}",
+                "environment_commit": "${global__environment_commit}"
+      },
+      "dependsOn": [
+        "[variables('hostingPlanName')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Web/sites/config",
+      "name": "[concat(parameters('siteName'), '/web')]",
+      "apiVersion": "2016-08-01",
+      "location": "UK South",
+      "scale": null,
+      "properties": {
+        "httpLoggingEnabled": true,
+        "logsDirectorySizeLimit": 35,
+        "detailedErrorLoggingEnabled": true,
+        "alwaysOn": true
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Web/sites/hostNameBindings",
+      "name": "[concat(parameters('sitename'), '/', parameters('sitename'), '.azurewebsites.net')]",
+      "apiVersion": "2016-08-01",
+      "location": "UK South",
+      "scale": null,
+      "properties": {
+        "siteName": "[parameters('sitename')]",
+        "domainId": null,
+        "hostNameType": "Verified"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sitename'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.Web/sites/hostNameBindings",
+      "name": "[concat(parameters('sitename'), '/', parameters('websiteCustomName'), '.', parameters('websiteCustomDomain'))]",
+      "apiVersion": "2016-08-01",
+      "location": "UK South",
+      "scale": null,
+      "properties": {
+        "siteName": "[parameters('sitename')]",
+        "domainId": null,
+        "hostNameType": "Verified",
+        "sslState": "SniEnabled",
+        "thumbprint": "[reference(resourceId('Microsoft.Web/certificates', parameters('certificateName'))).Thumbprint]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', parameters('sitename'))]"
+      ]
+    }
+  ]
+}

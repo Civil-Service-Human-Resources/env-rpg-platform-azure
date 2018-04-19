@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+./tf/plans/
+./tf/bin/.terraform/
+*.out
+.terraform/
+.vscode/
+*.ignore

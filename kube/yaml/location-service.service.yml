@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: location-service
+spec:
+  ports:
+  - port: 80
+    targetPort: 8989
+  selector:
+    application: location-service

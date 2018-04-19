@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    application: api
+  name: api
+spec:
+  containers:
+  - image: cshrrpg.azurecr.io/cshr-api:develop
+    name: api
+    resources:
+      limits:
+        memory: "1000Mi"
+    env:
+    - name: LOCATION_SERVICE_URL
+      value: "http://location-service:8989/findlocation/{searchTerm}"
+    - name: DATASOURCE_URL
+      value: "jdbc:postgresql://191.237.232.75:5432/cshr?ssl=true"
+    - name: DATASOURCE_USERNAME
+      value: "postgresqladmin@rpg-dev-db-candidate-interface-db"
+    - name: DATASOURCE_PASSWORD
+      value: "foh9Xequ4AhB"  
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+  dnsPolicy: ClusterFirstWithHostNet
+  hostNetwork: true
