@@ -22,9 +22,7 @@ rpg - resource group - candidate-interface-db
 
 
 ## Assumptions
-We will create all our components in uk south.
-
-staging account will hold dev, test
+We will create all our components in West Europe.
 
 ## Tags
 Standard list of tags for all components

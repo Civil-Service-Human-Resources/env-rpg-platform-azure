@@ -1,5 +1,0 @@
-environment__name       = "test"
-
-environment__cidr_second_oc = 20
-
-environment__public_key_cshr  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/iweXXGAUdywCtxRK/JkoL2KY9prbSFhu3U2kb3tI4BsudMl5a3Ez4nGhS00YLWtdwktK33tjxFlwTBalomIv9fwxxz+yAFPCysXJVbMqD1aMknqvWblVEGugirSX44cgcSr52DkiZ1J2Kn674A9ekhzYNnyra8n4v9O6kE3U9lvIzVfJknwd2Nv7ZoNE/XnJRwfOqeB6BZoVHjrDrs1ef6BmU4F/PPZG3JvQxnevi2n2VupLcBW6Q1dvHTfMgnJShMo2AZcGy6W+1WscK21KjNRgd6Mzts2klHy/PTPhFNt90ggLTtj2Z1j6a3oge9OqO15cMwvSpFBPummHq7Xx rpg@cshr-staging"
