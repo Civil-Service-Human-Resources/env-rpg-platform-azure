@@ -24,26 +24,26 @@ resource "azurerm_dns_cname_record" "location_service_cname" {
 data "template_file" "location_service_arm" {
   template = "${file("${path.module}/templates/location-service.arm.template.json")}"
   vars {
-      app-service-location-service__vaultresourcegroup                        = "${var.app-service-location-service__vaultresourcegroup}"
-      app-service-location-service__vaultname                                 = "${var.app-service-location-service__vaultname}"
-      app-service-location-service__existingkeyvaultsecretname                = "${var.app-service-location-service__existingkeyvaultsecretname}"
       app-service-location-service__certificatename                           = "${var.app-service-location-service__certificatename}"
       app-service-location-service__docker_image                              = "${var.app-service-location-service__docker_image}"
       app-service-location-service__docker_image_tag                          = "${var.app-service-location-service__docker_image_tag}"
-      app-service-location-service__ENC_docker_registry_user                  = "${var.app-service-location-service__ENC_docker_registry_user}"
       app-service-location-service__ENC_docker_registry_password              = "${var.app-service-location-service__ENC_docker_registry_password}"
+      app-service-location-service__ENC_docker_registry_user                  = "${var.app-service-location-service__ENC_docker_registry_user}"
+      app-service-location-service__FILEBEAT_ENVIRONMENT                      = "${var.environment__name}"
+      app-service-location-service__ENC_FILEBEAT_HOSTS                        = "${var.global__ENC_filebeat_hosts}"
       app-service-location-service__ENC_LOCATION_SERVICE_GOOGLE_SERVICE_API_KEY   = "${var.app-service-location-service__ENC_LOCATION_SERVICE_GOOGLE_SERVICE_API_KEY}"
-      
-      app-service-location-service__ENC_LOCATION_SERVICE_USERNAME             = "${var.app-service-location-service__ENC_LOCATION_SERVICE_USERNAME}"  
       app-service-location-service__ENC_LOCATION_SERVICE_PASSWORD             = "${var.app-service-location-service__ENC_LOCATION_SERVICE_PASSWORD}"
-      
+      app-service-location-service__ENC_LOCATION_SERVICE_USERNAME             = "${var.app-service-location-service__ENC_LOCATION_SERVICE_USERNAME}"  
+      app-service-location-service__existingkeyvaultsecretname                = "${var.app-service-location-service__existingkeyvaultsecretname}"
+      app-service-location-service__vaultname                                 = "${var.app-service-location-service__vaultname}"
+      app-service-location-service__vaultresourcegroup                        = "${var.app-service-location-service__vaultresourcegroup}"
       application_name                                                        = "${var.application_name}"  
       environment__name                                                       = "${var.environment__name}"
-      global__service_id                                                      = "${var.global__service_id}"
       global__deployed_by                                                     = "${var.global__deployed_by}"
-      global__environment_version                                             = "${var.global__environment_version}"
       global__environment_commit                                              = "${var.global__environment_commit}"
+      global__environment_version                                             = "${var.global__environment_version}"
       global__region                                                          = "${var.global__region}"
+      global__service_id                                                      = "${var.global__service_id}"
   }
 }
 

@@ -5,7 +5,6 @@ variable "app-service-location-service__docker_image" {
 
 variable "app-service-location-service__docker_image_tag" {
     type        = "string"
-    default     = "latest"
 }
 
 variable "app-service-location-service__ENC_LOCATION_SERVICE_GOOGLE_SERVICE_API_KEY" {

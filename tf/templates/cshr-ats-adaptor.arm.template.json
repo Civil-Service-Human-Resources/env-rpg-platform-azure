@@ -86,21 +86,8 @@
                     "siteAuthSettings": null,
                     "appSettings": [
                         {
-                            "name": "DOCKER_CUSTOM_IMAGE_NAME",
-                            "value": "${app-service-cshr-ats-adaptor__docker_image}:${app-service-cshr-ats-adaptor__docker_image_tag}"
-                        },
-                        {
-                            "name": "DOCKER_REGISTRY_SERVER_USERNAME",
-                            "value": "${app-service-cshr-ats-adaptor__ENC_docker_registry_user}"
-                        },
-                        {
-                            "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
-                            "value": "${app-service-cshr-ats-adaptor__ENC_docker_registry_password}"
-                        },
-                        {
                             "name": "ATS_AUTHENTICATION_TOKEN",
                             "value": "${app-service-cshr-ats-adaptor__ENC_ATS_AUTHENTICATION_TOKEN}"
-
                         },
                         {
                             "name": "ATS_CLIENT_ID",
@@ -117,69 +104,110 @@
                         {
                             "name": "ATS_REQUEST_BATCH_SIZE",
                             "value": "${app-service-cshr-ats-adaptor__ATS_REQUEST_BATCH_SIZE}"
-                        }, 
+                        },
                         {
                             "name": "ATS_REQUEST_ENDPOINT",
-                            "value": "${app-service-cshr-ats-adaptor__ATS_REQUEST_ENDPOINT}" 
-
+                            "value": "${app-service-cshr-ats-adaptor__ATS_REQUEST_ENDPOINT}"
                         },
                         {
                             "name": "CSHR_API_SERVICE_DEPARTMENT_FINDALL_ENDPOINT",
                             "value": "${app-service-cshr-ats-adaptor__CSHR_API_SERVICE_DEPARTMENT_FINDALL_ENDPOINT}"
-
                         },
                         {
-                            "name": "CSHR_API_SERVICE_VACANCY_SAVE_ENDPOINT",
-                            "value": "${app-service-cshr-ats-adaptor__CSHR_API_SERVICE_VACANCY_SAVE_ENDPOINT}"
-
-                        },
-                        {
-                            "name": "CSHR_API_SERVICE_VACANCY_SAVE_USERNAME",
-                            "value": "${app-service-cshr-ats-adaptor__ENC_CSHR_API_SERVICE_VACANCY_SAVE_USERNAME}"
-                        },
-                        {
-                            "name": "CSHR_API_SERVICE_VACANCY_SAVE_PASSWORD",
-                            "value": "${app-service-cshr-ats-adaptor__ENC_CSHR_API_SERVICE_VACANCY_SAVE_PASSWORD}"
+                            "name": "CSHR_API_SERVICE_SEARCH_PASSWORD",
+                            "value": "${app-service-cshr-ats-adaptor__ENC_CSHR_API_SERVICE_SEARCH_PASSWORD}"
                         },
                         {
                             "name": "CSHR_API_SERVICE_SEARCH_USERNAME",
                             "value": "${app-service-cshr-ats-adaptor__ENC_CSHR_API_SERVICE_SEARCH_USERNAME}"
                         },
                         {
-                            "name": "CSHR_API_SERVICE_SEARCH_PASSWORD",
-                            "value": "${app-service-cshr-ats-adaptor__ENC_CSHR_API_SERVICE_SEARCH_PASSWORD}"
-
+                            "name": "CSHR_API_SERVICE_VACANCY_FINDALL_ENDPOINT",
+                            "value": "${app-service-cshr-ats-adaptor__CSHR_API_SERVICE_VACANCY_FINDALL_ENDPOINT}"
+                        },
+                        {
+                            "name": "CSHR_API_SERVICE_VACANCY_LOAD_ENDPOINT",
+                            "value": "${app-service-cshr-ats-adaptor__CSHR_API_SERVICE_VACANCY_LOAD_ENDPOINT}"
+                        },
+                        {
+                            "name": "CSHR_API_SERVICE_VACANCY_SAVE_ENDPOINT",
+                            "value": "${app-service-cshr-ats-adaptor__CSHR_API_SERVICE_VACANCY_SAVE_ENDPOINT}"
+                        },
+                        {
+                            "name": "CSHR_API_SERVICE_VACANCY_SAVE_PASSWORD",
+                            "value": "${app-service-cshr-ats-adaptor__ENC_CSHR_API_SERVICE_VACANCY_SAVE_PASSWORD}"
+                        },
+                        {
+                            "name": "CSHR_API_SERVICE_VACANCY_SAVE_USERNAME",
+                            "value": "${app-service-cshr-ats-adaptor__ENC_CSHR_API_SERVICE_VACANCY_SAVE_USERNAME}"
                         },
                         {
                             "name": "CSHR_ATS_VENDOR_ID",
                             "value": "${app-service-cshr-ats-adaptor__ENC_CSHR_ATS_VENDOR_ID}"
-
                         },
                         {
                             "name": "CSHR_JOBRUN_AUDIT_BASEFILENAME",
                             "value": "${app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_BASEFILENAME}"
-
+                        },
+                        {
+                            "name": "CSHR_JOBRUN_AUDIT_DIRECTORY",
+                            "value": "${app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_DIRECTORY}"
+                        },
+                        {
+                            "name": "CSHR_JOBRUN_CRON_SCHEDULE",
+                            "value": "${app-service-cshr-ats-adaptor__CSHR_JOBRUN_CRON_SCHEDULE}"
+                        },
+                        {
+                            "name": "DOCKER_CUSTOM_IMAGE_NAME",
+                            "value": "${app-service-cshr-ats-adaptor__docker_image}:${app-service-cshr-ats-adaptor__docker_image_tag}"
+                        },
+                        {
+                            "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+                            "value": "${app-service-cshr-ats-adaptor__ENC_docker_registry_password}"
+                        },
+                        {
+                            "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+                            "value": "${app-service-cshr-ats-adaptor__ENC_docker_registry_user}"
+                        },
+                        {
+                            "name": "FILEBEAT_COMPONENT",
+                            "value": "cshr-ats-adaptor"
+                        },
+                        {
+                            "name": "FILEBEAT_ENVIRONMENT",
+                            "value": "${app-service-cshr-ats-adaptor__FILEBEAT_ENVIRONMENT}"
+                        },
+                        {
+                            "name": "FILEBEAT_HOSTS",
+                            "value": "${app-service-cshr-ats-adaptor__FILEBEAT_HOSTS}"
+                        },
+                        {
+                            "name": "FILEBEAT_PLATFORM",
+                            "value": "azure"
                         },
                         {
                             "name": "SERVER_PORT",
-                            "value": 8080 
-
+                            "value": 8080
                         },
                         {
-                            "name": "SPRING_SECURITY_SERVICE_USERNAME",
-                            "value": "${app-service-cshr-ats-adaptor__ENC_SPRING_SECURITY_SERVICE_USERNAME}"    
-
+                            "name": "SLACK_NOTIFICATION_CHANNEL",
+                            "value": "${app-service-cshr-ats-adaptor__SLACK_NOTIFICATION_CHANNEL}"
+                        },
+                        {
+                            "name": "SLACK_NOTIFICATION_ENDPOINT",
+                            "value": "${app-service-cshr-ats-adaptor__SLACK_NOTIFICATION_ENDPOINT}"
                         },
                         {
                             "name": "SPRING_SECURITY_SERVICE_PASSWORD",
-                            "value": "${app-service-cshr-ats-adaptor__ENC_SPRING_SECURITY_SERVICE_PASSWORD}"                            
-
+                            "value": "${app-service-cshr-ats-adaptor__ENC_SPRING_SECURITY_SERVICE_PASSWORD}"
                         },
-
-
+                        {
+                            "name": "SPRING_SECURITY_SERVICE_USERNAME",
+                            "value": "${app-service-cshr-ats-adaptor__ENC_SPRING_SECURITY_SERVICE_USERNAME}"
+                        },
                         {
                             "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
-                            "value": "true"
+                            "value": "false"
                         },
                         {
                             "name": "WEBSITES_PORT",
