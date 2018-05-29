@@ -13,13 +13,14 @@ resource "azurerm_resource_group" "rg" {
   name     = "${var.global__service_id}-${var.environment__name}-rg-${var.application_name}"
   location = "${var.global__region}"
 }
-resource "azurerm_dns_cname_record" "location_service_cname" {
-  name                = "${var.global__service_id}-${var.environment__name}-${var.application_name}"
-  zone_name           = "${var.global__domain}"
-  resource_group_name = "lpgdomain"
-  ttl                 = 300
-  record              = "${var.global__service_id}-${var.environment__name}-${var.application_name}.azurewebsites.net"
-}
+
+#resource "azurerm_dns_cname_record" "location_service_cname" {
+#  name                = "${var.global__service_id}-${var.environment__name}-${var.application_name}"
+#  zone_name           = "${var.global__domain}"
+#  resource_group_name = "lpgdomain"
+#  ttl                 = 300
+#  record              = "${var.global__service_id}-${var.environment__name}-${var.application_name}.azurewebsites.net"
+#}
 
 data "template_file" "location_service_arm" {
   template = "${file("${path.module}/templates/location-service.arm.template.json")}"

@@ -9,7 +9,7 @@ global__domain                = "cshr.digital"
 global__cidr_whitelist      = [ "82.31.33.124/32",
                                 "193.240.153.242/32",
                                 "163.171.34.33/32",
-								"176.249.46.66/32"]
+								"85.255.236.213/32"]
 
 global__cidr_whitelist_description = [ "jk-wfh",
     "orange-wifi",

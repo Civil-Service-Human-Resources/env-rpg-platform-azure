@@ -12,13 +12,13 @@ resource "azurerm_resource_group" "rg_api" {
   location = "${var.global__region}"
 }
 
-resource "azurerm_dns_cname_record" "cname_api" {
-  name                = "${var.global__service_id}-${var.environment__name}-${var.application_name_api}"
-  zone_name           = "${var.global__domain}"
-  resource_group_name = "lpgdomain"
-  ttl                 = 300
-  record              = "${var.global__service_id}-${var.environment__name}-${var.application_name_api}.azurewebsites.net"
-}
+#resource "azurerm_dns_cname_record" "cname_api" {
+#  name                = "${var.global__service_id}-${var.environment__name}-${var.application_name_api}"
+#  zone_name           = "${var.global__domain}"
+#  resource_group_name = "lpgdomain"
+#  ttl                 = 300
+#  record              = "${var.global__service_id}-${var.environment__name}-${var.application_name_api}.azurewebsites.net"
+#}
 
 
 data "template_file" "api_arm" {
