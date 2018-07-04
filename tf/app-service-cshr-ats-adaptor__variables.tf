@@ -5,7 +5,6 @@ variable "app-service-cshr-ats-adaptor__docker_image" {
 
 variable "app-service-cshr-ats-adaptor__docker_image_tag" {
     type        = "string"
-    default     = "develop"
 }
 
 variable "app-service-cshr-ats-adaptor__ENC_docker_registry_user" {
@@ -46,12 +45,12 @@ variable "app-service-cshr-ats-adaptor__ENC_SPRING_SECURITY_SERVICE_PASSWORD" { 
 
 variable "app-service-cshr-ats-adaptor__ATS_JOBRUN_HISTORY_DIRECTORY" {
      type = "string" 
-     default = "/home"
+     default = "/logs"
 }
 
 variable "app-service-cshr-ats-adaptor__ATS_JOBRUN_HISTORY_FILE" { 
     type = "string" 
-    default = "jobRunHistory.txt"
+    default = "jobRunHistory.log"
 }
 
 variable "app-service-cshr-ats-adaptor__ATS_REQUEST_BATCH_SIZE" { 
@@ -71,7 +70,23 @@ variable "app-service-cshr-ats-adaptor__ATS_REQUEST_ENDPOINT" {
 #     type = "string" 
 #}
 
+variable "app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_DIRECTORY" {
+    type = "string" 
+    default = "/logs"
+}
+
 variable "app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_BASEFILENAME" { 
     type = "string" 
-    default = "VacancyProcessor"
+    default = "VacancyProcessor.log"
+}
+
+variable "app-service-cshr-ats-adaptor__CSHR_JOBRUN_FIXED_DELAY" {
+    type = "string"
+}
+
+variable "app-service-cshr-ats-adaptor__ENC_SLACK_NOTIFICATION_CHANNEL" {
+    type = "string"
+}
+variable "app-service-cshr-ats-adaptor__ENC_SLACK_NOTIFICATION_ENDPOINT" {
+    type = "string"
 }

@@ -98,6 +98,22 @@
                             "value": "${app-service-location-service__ENC_docker_registry_password}"
                         },
                         {
+                            "name": "FILEBEAT_COMPONENT",
+                            "value": "location-service"
+                        },
+                        {
+                            "name": "FILEBEAT_ENVIRONMENT",
+                            "value": "${app-service-location-service__FILEBEAT_ENVIRONMENT}"
+                        },
+                        {
+                            "name": "FILEBEAT_HOSTS",
+                            "value": "${app-service-location-service__ENC_FILEBEAT_HOSTS}"
+                        },
+                        {
+                            "name": "FILEBEAT_PLATFORM",
+                            "value": "azure"
+                        },
+                        {
                             "name": "LOCATION_SERVICE_GOOGLE_SERVICE_API_KEY",
                             "value": "${app-service-location-service__ENC_LOCATION_SERVICE_GOOGLE_SERVICE_API_KEY}"
                         },

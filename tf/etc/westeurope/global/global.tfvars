@@ -4,39 +4,17 @@ global__region                = "westeurope"
 global__project               = "cshr"
 global__service_id            = "rpg"
 
-global__cidr_first_oc         = "10"
-
 global__domain                = "cshr.digital"
-
-global__cidr_jump_access_list = [ "0.0.0.0/0" ]
 
 global__cidr_whitelist      = [ "82.31.33.124/32",
                                 "193.240.153.242/32",
-                                "213.205.198.0/24",
-				                "94.126.212.170/32",
-                                "51.6.32.146/32",
-                                "213.205.194.0/24",
-                                "85.133.79.201/32",
-				                "46.233.78.138/32",
                                 "163.171.34.33/32",
-                                "81.168.90.12/32",
-                                "90.216.248.57/32",
-                                "78.148.11.244/32",
-                                "90.217.10.113/32"]
+								"86.130.182.197/32"]
 
 global__cidr_whitelist_description = [ "jk-wfh",
     "orange-wifi",
-    "ee-tether",
-    "tt",
-    "ih-wfh",
-    "jc",
-    "mw-pc",
-    "jc",
     "gov-wifi",
-    "jh-temp",
-    "jh",
-    "usha",
-    "rg"
+	"rg"
 ]
 
 global__cidr_azure_app_ips = [
@@ -151,21 +129,3 @@ global__cidr_azure_app_ips = [
 			"213.199.180.192,213.199.180.223",
 			"213.199.183.0,213.199.183.255"
 ]
-
-
-
-#193 is orange wifi
-#213 is EE tether
-#81 is 35HS
-#94 is TT
-#51 is IH WFH
-#90. is ravi
-#213.205.194 is JC
-#85 address is Mark PC
-#46 is JC
-#163 is gov wifi
-
-#81.168 is john Hughes temporary
-#90.216 is John hughes
-#78.148 is usha
-#2. is ravi

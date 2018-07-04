@@ -29,3 +29,17 @@ variable "candidate-interface-postgres-db__sku_capacity" {
 variable "candidate-interface-postgres-db__sku_tier" {
   type = "string"
 }
+
+variable "candidate-interface-postgres-db__sku_family" {
+  type = "string"
+}
+
+variable "candidate-interface-postgres-db__backup_retention_days" {
+    type = "string"
+}
+
+variable "candidate-interface-postgres-db__geo_redundant_backup" {
+    type = "string"
+}
+
+

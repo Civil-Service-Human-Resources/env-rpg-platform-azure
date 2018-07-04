@@ -23,15 +23,21 @@ resource "azurerm_postgresql_server" "candidate_interface_db" {
   resource_group_name           = "${azurerm_resource_group.candidate_interface_db.name}"
 
   sku {
-    name                        = "${var.candidate-interface-postgres-db__sku_name}"
-    capacity                    = "${var.candidate-interface-postgres-db__sku_capacity}"
-    tier                        = "${var.candidate-interface-postgres-db__sku_tier}"
+    name      = "${var.candidate-interface-postgres-db__sku_name}"
+    capacity  = "${var.candidate-interface-postgres-db__sku_capacity}"
+    tier      = "${var.candidate-interface-postgres-db__sku_tier}"
+    family    = "${var.candidate-interface-postgres-db__sku_family}"
+  }
+
+   storage_profile {
+    storage_mb = "${var.candidate-interface-postgres-db__storage_mb}"
+    backup_retention_days = "${var.candidate-interface-postgres-db__backup_retention_days}"
+    geo_redundant_backup = "${var.candidate-interface-postgres-db__geo_redundant_backup}"
   }
 
   administrator_login           = "${var.candidate-interface-postgres-db__ENC_administrator_login}"
   administrator_login_password  = "${var.candidate-interface-postgres-db__ENC_administrator_login_password}"
   version                       = "${var.candidate-interface-postgres-db__version}"
-  storage_mb                    = "${var.candidate-interface-postgres-db__storage_mb}"
   ssl_enforcement               = "${var.candidate-interface-postgres-db__ssl_enforcement}"
 
   tags {

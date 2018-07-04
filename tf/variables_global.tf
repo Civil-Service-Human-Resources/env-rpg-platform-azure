@@ -6,10 +6,6 @@ variable "global__region"                { type = "string" }
 variable "global__project"               { type = "string" }
 variable "global__service_id"            { type = "string" }
 
-variable "global__cidr_first_oc"          {
-  type = "string"
-  description = "The first octet of private IP eg 10, 172, etc"
-}
 variable "global__account_number"        { type = "string" }
 
 variable "global__environment_version"   {
@@ -41,9 +37,12 @@ variable "global__cidr_whitelist"         { type = "list" }
 
 variable "global__cidr_whitelist_description"         { type = "list" }
 
-variable "global__cidr_jump_access_list"  { type = "list" }
-
 variable "global__cidr_azure_app_ips"     { 
-  type          = "list",
+  type          = "list"
   description   = "the exit IPs of Azure App Services, for particular region"
+}
+
+variable "global__ENC_filebeat_hosts" {
+  type = "string"
+  description =  "the logit hosts"
 }

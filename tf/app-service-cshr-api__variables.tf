@@ -5,7 +5,6 @@ variable "app-service-cshr-api__docker_image" {
 
 variable "app-service-cshr-api__docker_image_tag" {
     type        = "string"
-    default     = "develop"
 }
 
 variable "app-service-cshr-api__ENC_docker_registry_user" {

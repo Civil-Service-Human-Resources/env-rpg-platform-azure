@@ -124,6 +124,10 @@ else
     consoleout "encrypted/external tf vars file: ${encrypted_var_file}"
   done
 
+  for encrypted_global_var_file in ${encrypted_vars_directory}/etc/${az_region}/global/*.tfvars; do
+    var_file_global_param="-var-file=${encrypted_global_var_file} ${var_file_global_param}"
+    consoleout "encrypted/GLOBAL tf vars file: ${encrypted_global_var_file}"
+  done
   # List the vars files in the global directory
   for global_var_file in ${parent_dir}/etc/${az_region}/global/*.tfvars; do
     var_file_global_param="-var-file=${global_var_file} ${var_file_global_param}"
