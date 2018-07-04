@@ -154,8 +154,8 @@
                             "value": "${app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_DIRECTORY}"
                         },
                         {
-                            "name": "CSHR_JOBRUN_CRON_SCHEDULE",
-                            "value": "${app-service-cshr-ats-adaptor__CSHR_JOBRUN_CRON_SCHEDULE}"
+                            "name": "CSHR_JOBRUN_FIXED_DELAY",
+                            "value": "${app-service-cshr-ats-adaptor__CSHR_JOBRUN_FIXED_DELAY}"
                         },
                         {
                             "name": "DOCKER_CUSTOM_IMAGE_NAME",

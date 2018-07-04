@@ -80,7 +80,7 @@ variable "app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_BASEFILENAME" {
     default = "VacancyProcessor.log"
 }
 
-variable "app-service-cshr-ats-adaptor__CSHR_JOBRUN_CRON_SCHEDULE" {
+variable "app-service-cshr-ats-adaptor__CSHR_JOBRUN_FIXED_DELAY" {
     type = "string"
 }
 

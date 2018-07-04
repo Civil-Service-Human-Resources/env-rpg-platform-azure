@@ -36,7 +36,7 @@ data "template_file" "cshr_ats_adaptor_arm" {
       app-service-cshr-ats-adaptor__CSHR_API_SERVICE_VACANCY_SAVE_ENDPOINT          = "https://${var.global__service_id}-${var.environment__name}-${var.application_name_api}.${var.global__domain}/vacancy/save"
       app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_BASEFILENAME                  = "${var.app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_BASEFILENAME}"           
       app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_DIRECTORY                     = "${var.app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_DIRECTORY}"
-      app-service-cshr-ats-adaptor__CSHR_JOBRUN_CRON_SCHEDULE                       = "${var.app-service-cshr-ats-adaptor__CSHR_JOBRUN_CRON_SCHEDULE}"
+      app-service-cshr-ats-adaptor__CSHR_JOBRUN_FIXED_DELAY                         = "${var.app-service-cshr-ats-adaptor__CSHR_JOBRUN_FIXED_DELAY}"
       app-service-cshr-ats-adaptor__docker_image                                    = "${var.app-service-cshr-ats-adaptor__docker_image}"
       app-service-cshr-ats-adaptor__docker_image_tag                                = "${var.app-service-cshr-ats-adaptor__docker_image_tag}"
       app-service-cshr-ats-adaptor__ENC_ATS_AUTHENTICATION_TOKEN                    = "${var.app-service-cshr-ats-adaptor__ENC_ATS_AUTHENTICATION_TOKEN}" 
