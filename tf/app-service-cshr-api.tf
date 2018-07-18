@@ -40,6 +40,12 @@ data "template_file" "api_arm" {
     app-service-cshr-api__ENC_LOCATION_SERVICE_USERNAME         = "${var.app-service-cshr-api__ENC_LOCATION_SERVICE_USERNAME}"
     app-service-cshr-api__ENC_SEARCH_PASSWORD                   = "${var.app-service-cshr-api__ENC_SEARCH_PASSWORD}"
     app-service-cshr-api__ENC_SEARCH_USERNAME                   = "${var.app-service-cshr-api__ENC_SEARCH_USERNAME}"
+
+    app-service-cshr-api__ENC_NOTIFY_SERVICE_TEMPLATE_ID        = "${var.app-service-cshr-api__ENC_NOTIFY_SERVICE_TEMPLATE_ID}"
+    app-service-cshr-api__ENC_NOTIFY_SERVICE_NOTIFY_API_KEY     = "${var.app-service-cshr-api__ENC_NOTIFY_SERVICE_NOTIFY_API_KEY}"
+    app-service-cshr-api__ENC_NOTIFY_USERNAME                   = "${var.app-service-cshr-api__ENC_NOTIFY_USERNAME}"
+    app-service-cshr-api__ENC_NOTIFY_PASSWORD                   = "${var.app-service-cshr-api__ENC_NOTIFY_PASSWORD}"
+
     app-service-cshr-api__existingkeyvaultsecretname                = "${var.app-service-cshr-api__existingkeyvaultsecretname}"
     app-service-cshr-api__vaultname                                 = "${var.app-service-cshr-api__vaultname}"
     app-service-cshr-api__vaultresourcegroup                        = "${var.app-service-cshr-api__vaultresourcegroup}"

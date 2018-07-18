@@ -76,5 +76,21 @@ variable "app-service-cshr-api__ENC_LOCATION_SERVICE_USERNAME" {
 variable "app-service-cshr-api__ENC_LOCATION_SERVICE_PASSWORD" {
     type = "string"
     description = ""    
-}   
+} 
+
+variable "app-service-cshr-api__ENC_NOTIFY_SERVICE_TEMPLATE_ID" {
+    type = "string"
+}
+
+variable "app-service-cshr-api__ENC_NOTIFY_SERVICE_NOTIFY_API_KEY" {
+    type = "string"
+}
+
+variable "app-service-cshr-api__ENC_NOTIFY_USERNAME" {
+    type = "string"
+}
+
+variable "app-service-cshr-api__ENC_NOTIFY_PASSWORD" {
+    type = "string"
+}
  
