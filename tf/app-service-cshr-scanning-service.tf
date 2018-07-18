@@ -25,7 +25,7 @@ data "template_file" "scanning-service_arm" {
     app-service-cshr-scanning-service__FILEBEAT_ENVIRONMENT         = "${var.environment__name}"
     app-service-cshr-scanning-service__ENC_FILEBEAT_HOSTS           = "${var.global__ENC_filebeat_hosts}"
 
-    app-service-cshr-scanning-service__CSHR_SCANNER_ENDPOINT            = "${var.app-service-cshr-scanning-service__CSHR_SCANNER_ENDPOINT}"
+    app-service-cshr-scanning-service__CSHR_SCANNER_ENDPOINT            = "https://rpg-${var.environment__name}-cshr-clamav.azurewebsites.net"
     app-service-cshr-scanning-service__SERVER_PORT                      = "${var.app-service-cshr-scanning-service__SERVER_PORT}"
     app-service-cshr-scanning-service__SPRING_SECURITY_SERVICE_PASSWORD = "${var.app-service-cshr-scanning-service__ENC_SPRING_SECURITY_SERVICE_PASSWORD}"
     app-service-cshr-scanning-service__SPRING_SECURITY_SERVICE_USERNAME = "${var.app-service-cshr-scanning-service__ENC_SPRING_SECURITY_SERVICE_USERNAME}"
@@ -33,7 +33,7 @@ data "template_file" "scanning-service_arm" {
     app-service-cshr-scanning-service__existingkeyvaultsecretname = "${var.app-service-cshr-scanning-service__existingkeyvaultsecretname}"
     app-service-cshr-scanning-service__vaultname                  = "${var.app-service-cshr-scanning-service__vaultname}"
     app-service-cshr-scanning-service__vaultresourcegroup         = "${var.app-service-cshr-scanning-service__vaultresourcegroup}"
-    application_name                                              = "${var.application_name_api}"
+    application_name                                              = "${var.application_name_scanning-service}"
     app-service-cshr-scanning-service__WEBSITES_PORT              = "${var.app-service-cshr-scanning-service__WEBSITES_PORT}"
     environment__name                                             = "${var.environment__name}"
     global__deployed_by                                           = "${var.global__deployed_by}"

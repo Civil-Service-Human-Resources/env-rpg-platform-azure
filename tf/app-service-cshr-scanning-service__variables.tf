@@ -32,12 +32,6 @@ variable "app-service-cshr-scanning-service__existingkeyvaultsecretname" {
 variable "app-service-cshr-scanning-service__certificatename" {
   default = "starcshrdigital"
 }
-
-variable "app-service-cshr-scanning-service__CSHR_SCANNER_ENDPOINT" {
-  type        = "string"
-  description = "clamav end point"
-}
-
 variable "app-service-cshr-scanning-service__SERVER_PORT" {
   type        = "string"
   description = ""

@@ -1,1 +1,1 @@
-app-service-location-service__docker_image_tag = "develop"
+app-service-cshr-scanning-service__docker_image_tag = "develop"
