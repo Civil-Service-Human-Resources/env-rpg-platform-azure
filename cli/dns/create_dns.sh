@@ -12,6 +12,7 @@ export NAMES=(
     rpg-${ENV}-cshr-api
     rpg-${ENV}-cshr-ats-adaptor
     rpg-${ENV}-cshr-clamav
+    rpg-${ENV}-cshr-scanning-service
 )
 
 for name in ${NAMES[@]}; do 
