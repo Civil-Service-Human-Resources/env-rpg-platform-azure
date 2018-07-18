@@ -5,12 +5,13 @@
 set -eo pipefail
 
 export RG=lpgdomain
-export ENV=prod
+export ENV=dev
 export ZONE=cshr.digital
 export NAMES=(
     rpg-${ENV}-location-service
     rpg-${ENV}-cshr-api
     rpg-${ENV}-cshr-ats-adaptor
+    rpg-${ENV}-cshr-clamav
 )
 
 for name in ${NAMES[@]}; do 

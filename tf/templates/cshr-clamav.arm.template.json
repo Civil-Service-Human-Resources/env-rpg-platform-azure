@@ -107,21 +107,14 @@
                             "name": "DOCKER_CUSTOM_IMAGE_NAME",
                             "value": "${app-service-cshr-clamav__docker_image}:${app-service-cshr-clamav__docker_image_tag}"
                         },
-                        {
-                            "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
-                            "value": "${app-service-cshr-clamav__ENC_docker_registry_password}"
-                        },
-                        {
-                            "name": "DOCKER_REGISTRY_SERVER_USERNAME",
-                            "value": "${app-service-cshr-clamav__ENC_docker_registry_user}"
-                        },
+                        
                         {
                             "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
                             "value": "true"
                         },
                         {
                             "name": "WEBSITES_PORT",
-                            "value": "${var.app-service-cshr-clamav__WEBSITES_PORT}"
+                            "value": "${app-service-cshr-clamav__WEBSITES_PORT}"
                         }
                     
                     ]
