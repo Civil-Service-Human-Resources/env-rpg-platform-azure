@@ -53,3 +53,9 @@ variable "app-service-cshr-scanning-service__ENC_SPRING_SECURITY_SERVICE_USERNAM
   type        = "string"
   description = "spring-boot username"
 }
+
+variable "app-service-cshr-scanning-service__WEBSITES_PORT" {
+  type        = "string"
+  description = "port to connect to clamav"
+  default     = "8080"
+}

@@ -20,7 +20,7 @@ data "template_file" "scanning-service_arm" {
     app-service-cshr-scanning-service__docker_image     = "${var.app-service-cshr-scanning-service__docker_image}"
     app-service-cshr-scanning-service__docker_image_tag = "${var.app-service-cshr-scanning-service__docker_image_tag}"
 
-    app-service-cshr-scanning-service__ENC_docker_registry_password = "${var.app-service-cshr-clmav__ENC_docker_registry_password}"
+    app-service-cshr-scanning-service__ENC_docker_registry_password = "${var.app-service-cshr-scanning-service__ENC_docker_registry_password}"
     app-service-cshr-scanning-service__ENC_docker_registry_user     = "${var.app-service-cshr-scanning-service__ENC_docker_registry_user}"
     app-service-cshr-scanning-service__FILEBEAT_ENVIRONMENT         = "${var.environment__name}"
     app-service-cshr-scanning-service__ENC_FILEBEAT_HOSTS           = "${var.global__ENC_filebeat_hosts}"
