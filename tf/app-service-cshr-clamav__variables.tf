@@ -7,15 +7,15 @@ variable "app-service-cshr-clamav__docker_image_tag" {
   type = "string"
 }
 
-variable "app-service-cshr-clamav__ENC_docker_registry_user" {
-  type        = "string"
-  description = "the ACR user name to pull the image"
-}
-
-variable "app-service-cshr-clamav__ENC_docker_registry_password" {
-  type        = "string"
-  description = "the ACR password to pull the image"
-}
+#variable "app-service-cshr-clamav__ENC_docker_registry_user" {
+#  type        = "string"
+#  description = "the ACR user name to pull the image"
+#}
+#
+#variable "app-service-cshr-clamav__ENC_docker_registry_password" {
+#  type        = "string"
+#  description = "the ACR password to pull the image"
+#}
 
 #Need to clarify this
 variable "app-service-cshr-clamav__vaultresourcegroup" {
