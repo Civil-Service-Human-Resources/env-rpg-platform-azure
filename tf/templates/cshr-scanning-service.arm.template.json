@@ -18,11 +18,11 @@
         },
         "vaultResourceGroup": {
             "type": "string",
-            "defaultvalue": "${app-service-cshr-scanning_service__vaultresourcegroup}"
+            "defaultvalue": "${app-service-cshr-scanning-service__vaultresourcegroup}"
         },
         "vaultName": {
             "type": "string",
-            "defaultvalue": "${app-service-cshr-scanning_service__vaultname}"
+            "defaultvalue": "${app-service-cshr-scanning-service__vaultname}"
         },
         "existingKeyVaultId": {
             "type": "string",
@@ -33,14 +33,14 @@
         },
         "existingKeyVaultSecretName": {
             "type": "string",
-            "defaultvalue": "${app-service-cshr-scanning_service__existingkeyvaultsecretname}",
+            "defaultvalue": "${app-service-cshr-scanning-service__existingkeyvaultsecretname}",
             "metadata": {
                 "description": "Key Vault Secret that contains a PFX certificate"
             }
         },
         "certificateName": {
             "type": "string",
-            "defaultvalue": "${app-service-cshr-scanning_service__certificatename}",
+            "defaultvalue": "${app-service-cshr-scanning-service__certificatename}",
             "metadata": {
                 "description": "User friendly certificate resource name"
             }
@@ -105,15 +105,15 @@
                  
                         {
                             "name": "DOCKER_CUSTOM_IMAGE_NAME",
-                            "value": "${app-service-cshr-scanning_service__docker_image}:${app-service-cshr-scanning_service__docker_image_tag}"
+                            "value": "${app-service-cshr-scanning-service__docker_image}:${app-service-cshr-scanning-service__docker_image_tag}"
                         },
                         {
                             "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
-                            "value": "${app-service-cshr-scanning_service__ENC_docker_registry_password}"
+                            "value": "${app-service-cshr-scanning-service__ENC_docker_registry_password}"
                         },
                         {
                             "name": "DOCKER_REGISTRY_SERVER_USERNAME",
-                            "value": "${app-service-cshr-scanning_service__ENC_docker_registry_user}"
+                            "value": "${app-service-cshr-scanning-service__ENC_docker_registry_user}"
                         },
                         
                         {
@@ -122,19 +122,35 @@
                         },
                         {
                             "name": "CSHR_SCANNER_ENDPOINT",
-                            "value": "${var.app-service-cshr-scanning_service__CSHR_SCANNER_ENDPOINT}"
+                            "value": "${app-service-cshr-scanning-service__CSHR_SCANNER_ENDPOINT}"
                         },
                         {
                             "name": "SERVER_PORT",
-                            "value": "${var.app-service-cshr-scanning_service__SERVER_PORT}"
+                            "value": "${app-service-cshr-scanning-service__SERVER_PORT}"
                         },
                         {
                             "name": "SPRING_SECURITY_SERVICE_PASSWORD",
-                            "value": "${var.app-service-cshr-scanning_service__SPRING_SECURITY_SERVICE_PASSWORD}"
+                            "value": "${app-service-cshr-scanning-service__SPRING_SECURITY_SERVICE_PASSWORD}"
                         },
                         {
                             "name": "SPRING_SECURITY_SERVICE_USERNAME",
-                            "value": "${var.app-service-cshr-scanning_service__SPRING_SECURITY_SERVICE_USERNAME}"
+                            "value": "${app-service-cshr-scanning-service__SPRING_SECURITY_SERVICE_USERNAME}"
+                        },
+                        {
+                            "name": "FILEBEAT_COMPONENT",
+                            "value": "cshr-scanning-service"
+                        },
+                        {
+                            "name": "FILEBEAT_ENVIRONMENT",
+                            "value": "${app-service-cshr-scanning-service__FILEBEAT_ENVIRONMENT}"
+                        },
+                        {
+                            "name": "FILEBEAT_HOSTS",
+                            "value": "${app-service-cshr-scanning-service__ENC_FILEBEAT_HOSTS}"
+                        },
+                        {
+                            "name": "FILEBEAT_PLATFORM",
+                            "value": "azure"
                         }
                     
                     ]
