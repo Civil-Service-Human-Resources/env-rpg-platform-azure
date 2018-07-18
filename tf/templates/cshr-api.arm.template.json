@@ -171,6 +171,22 @@
                             "value": "${app-service-cshr-api__ENC_SEARCH_USERNAME}"
                         },
                         {
+                            "name": "NOTIFY_SERVICE_TEMPLATE_ID",
+                            "value": "${app-service-cshr-api__ENC_NOTIFY_SERVICE_TEMPLATE_ID}"
+                        },
+                        {
+                            "name": "NOTIFY_SERVICE_NOTIFY_API_KEY",
+                            "value": "${app-service-cshr-api__ENC_NOTIFY_SERVICE_NOTIFY_API_KEY}"
+                        },
+                        {
+                            "name": "NOTIFY_USERNAME",
+                            "value": "${app-service-cshr-api__ENC_NOTIFY_USERNAME}"
+                        },
+                        {
+                            "name": "NOTIFY_PASSWORD",
+                            "value": "${app-service-cshr-api__ENC_NOTIFY_PASSWORD}"
+                        },
+                        {
                             "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
                             "value": "true"
                         },
