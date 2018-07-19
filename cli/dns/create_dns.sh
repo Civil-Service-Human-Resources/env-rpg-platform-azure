@@ -25,10 +25,6 @@ for name in ${NAMES[@]}; do
     az network dns record-set cname set-record --cname ${name}.azurewebsites.net  --record-set-name ${name} --resource-group ${RG} --zone-name ${ZONE}
 done
 
-# Create reference to gov paas installed UI.
-echo "Creating CNAME for UI"
-az network dns record-set cname create --name find-civil-service-jobs --resource-group ${RG} --zone-name ${ZONE} --ttl 300
-az network dns record-set cname set-record --cname rpg-ci.cloudapps.digital --record-set-name find-civil-service-jobs --resource-group ${RG} --zone-name ${ZONE}
 
 
 
