@@ -151,6 +151,10 @@
                         {
                             "name": "FILEBEAT_PLATFORM",
                             "value": "azure"
+                        },
+                        {
+                            "name": "WEBSITES_PORT",
+                            "value": "8080"
                         }
                     
                     ]
