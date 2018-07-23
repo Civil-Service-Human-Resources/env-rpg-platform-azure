@@ -33,10 +33,10 @@ variable "app-service-cshr-scanning-service__certificatename" {
   default = "starcshrdigital"
 }
 
-variable "app-service-cshr-scanning-service__SERVER_PORT" {
+variable "app-service-cshr-scanning-service__AV_SERVICE_PORT" {
   type        = "string"
   description = ""
-  default     = "8080"
+  default     = "443"
 }
 
 variable "app-service-cshr-scanning-service__ENC_SPRING_SECURITY_SERVICE_PASSWORD" {

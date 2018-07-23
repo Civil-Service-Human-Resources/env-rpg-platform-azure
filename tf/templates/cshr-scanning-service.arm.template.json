@@ -121,12 +121,12 @@
                             "value": "true"
                         },
                         {
-                            "name": "CSHR_SCANNER_ENDPOINT",
-                            "value": "${app-service-cshr-scanning-service__CSHR_SCANNER_ENDPOINT}"
+                            "name": "AV_SERVICE_HOSTNAME",
+                            "value": "${app-service-cshr-scanning-service__AV_SERVICE_HOSTNAME}"
                         },
                         {
-                            "name": "SERVER_PORT",
-                            "value": "${app-service-cshr-scanning-service__SERVER_PORT}"
+                            "name": "AV_SERVICE_PORT",
+                            "value": "${app-service-cshr-scanning-service__AV_SERVICE_PORT}"
                         },
                         {
                             "name": "SPRING_SECURITY_SERVICE_PASSWORD",
