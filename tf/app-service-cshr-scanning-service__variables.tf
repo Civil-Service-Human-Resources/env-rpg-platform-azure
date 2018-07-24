@@ -36,7 +36,7 @@ variable "app-service-cshr-scanning-service__certificatename" {
 variable "app-service-cshr-scanning-service__AV_SERVICE_PORT" {
   type        = "string"
   description = ""
-  default     = "443"
+  default     = "3310"
 }
 
 variable "app-service-cshr-scanning-service__ENC_SPRING_SECURITY_SERVICE_PASSWORD" {
