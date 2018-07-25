@@ -45,6 +45,8 @@ data "template_file" "api_arm" {
     app-service-cshr-api__ENC_NOTIFY_SERVICE_NOTIFY_API_KEY     = "${var.app-service-cshr-api__ENC_NOTIFY_SERVICE_NOTIFY_API_KEY}"
     app-service-cshr-api__ENC_NOTIFY_USERNAME                   = "${var.app-service-cshr-api__ENC_NOTIFY_USERNAME}"
     app-service-cshr-api__ENC_NOTIFY_PASSWORD                   = "${var.app-service-cshr-api__ENC_NOTIFY_PASSWORD}"
+    app-service-cshr-api__SPRING_PROFILES_ACTIVE                = "${var.app-service-cshr-api__SPRING_PROFILES_ACTIVE}"
+    
 
     app-service-cshr-api__existingkeyvaultsecretname                = "${var.app-service-cshr-api__existingkeyvaultsecretname}"
     app-service-cshr-api__vaultname                                 = "${var.app-service-cshr-api__vaultname}"

@@ -18,11 +18,11 @@
         },
         "vaultResourceGroup": {
             "type": "string",
-            "defaultvalue": "${app-service-cshr-api__vaultresourcegroup}"
+            "defaultvalue": "${app-service-cshr-scanning-service__vaultresourcegroup}"
         },
         "vaultName": {
             "type": "string",
-            "defaultvalue": "${app-service-cshr-api__vaultname}"
+            "defaultvalue": "${app-service-cshr-scanning-service__vaultname}"
         },
         "existingKeyVaultId": {
             "type": "string",
@@ -33,14 +33,14 @@
         },
         "existingKeyVaultSecretName": {
             "type": "string",
-            "defaultvalue": "${app-service-cshr-api__existingkeyvaultsecretname}",
+            "defaultvalue": "${app-service-cshr-scanning-service__existingkeyvaultsecretname}",
             "metadata": {
                 "description": "Key Vault Secret that contains a PFX certificate"
             }
         },
         "certificateName": {
             "type": "string",
-            "defaultvalue": "${app-service-cshr-api__certificatename}",
+            "defaultvalue": "${app-service-cshr-scanning-service__certificatename}",
             "metadata": {
                 "description": "User friendly certificate resource name"
             }
@@ -102,101 +102,63 @@
             "properties": {
                 "siteConfig": {
                     "appSettings": [
+                 
                         {
-                            "name": "CRUD_PASSWORD",
-                            "value": "${app-service-cshr-api__ENC_CRUD_PASSWORD}"
+                            "name": "DOCKER_CUSTOM_IMAGE_NAME",
+                            "value": "${app-service-cshr-scanning-service__docker_image}:${app-service-cshr-scanning-service__docker_image_tag}"
                         },
                         {
-                            "name": "CRUD_USERNAME",
-                            "value": "${app-service-cshr-api__ENC_CRUD_USERNAME}"
+                            "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+                            "value": "${app-service-cshr-scanning-service__ENC_docker_registry_password}"
                         },
                         {
-                            "name": "DATASOURCE_PASSWORD",
-                            "value": "${app-service-cshr-api__ENC_datasource_password}"
+                            "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+                            "value": "${app-service-cshr-scanning-service__ENC_docker_registry_user}"
+                        },
+                        
+                        {
+                            "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+                            "value": "true"
                         },
                         {
-                            "name": "DATASOURCE_URL",
-                            "value": "${datasource_url}"
+                            "name": "AV_SERVICE_HOSTNAME",
+                            "value": "${app-service-cshr-scanning-service__AV_SERVICE_HOSTNAME}"
                         },
                         {
-                            "name": "DATASOURCE_USERNAME",
-                            "value": "${app-service-cshr-api__ENC_datasource_username}"
+                            "name": "AV_SERVICE_PORT",
+                            "value": "${app-service-cshr-scanning-service__AV_SERVICE_PORT}"
+                        },
+                        {
+                            "name": "SPRING_SECURITY_SERVICE_PASSWORD",
+                            "value": "${app-service-cshr-scanning-service__SPRING_SECURITY_SERVICE_PASSWORD}"
+                        },
+                        {
+                            "name": "SPRING_SECURITY_SERVICE_USERNAME",
+                            "value": "${app-service-cshr-scanning-service__SPRING_SECURITY_SERVICE_USERNAME}"
                         },
                         {
                             "name": "FILEBEAT_COMPONENT",
-                            "value": "cshr-api"
+                            "value": "cshr-scanning-service"
                         },
                         {
                             "name": "FILEBEAT_ENVIRONMENT",
-                            "value": "${app-service-cshr-api__FILEBEAT_ENVIRONMENT}"
+                            "value": "${app-service-cshr-scanning-service__FILEBEAT_ENVIRONMENT}"
                         },
                         {
                             "name": "FILEBEAT_HOSTS",
-                            "value": "${app-service-cshr-api__ENC_FILEBEAT_HOSTS}"
+                            "value": "${app-service-cshr-scanning-service__ENC_FILEBEAT_HOSTS}"
                         },
                         {
                             "name": "FILEBEAT_PLATFORM",
                             "value": "azure"
                         },
                         {
-                            "name": "DOCKER_CUSTOM_IMAGE_NAME",
-                            "value": "${app-service-cshr-api__docker_image}:${app-service-cshr-api__docker_image_tag}"
-                        },
-                        {
-                            "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
-                            "value": "${app-service-cshr-api__ENC_docker_registry_password}"
-                        },
-                        {
-                            "name": "DOCKER_REGISTRY_SERVER_USERNAME",
-                            "value": "${app-service-cshr-api__ENC_docker_registry_user}"
-                        },
-                        {
-                            "name": "LOCATION_SERVICE_PASSWORD",
-                            "value": "${app-service-cshr-api__ENC_LOCATION_SERVICE_PASSWORD}"
-                        },
-                        {
-                            "name": "LOCATION_SERVICE_URL",
-                            "value": "${location_service_url}"
-                        },
-                        {
-                            "name": "LOCATION_SERVICE_USERNAME",
-                            "value": "${app-service-cshr-api__ENC_LOCATION_SERVICE_USERNAME}"
-                        },
-                        {
-                            "name": "SEARCH_PASSWORD",
-                            "value": "${app-service-cshr-api__ENC_SEARCH_PASSWORD}"
-                        },
-                        {
-                            "name": "SEARCH_USERNAME",
-                            "value": "${app-service-cshr-api__ENC_SEARCH_USERNAME}"
-                        },
-                        {
-                            "name": "NOTIFY_SERVICE_TEMPLATE_ID",
-                            "value": "${app-service-cshr-api__ENC_NOTIFY_SERVICE_TEMPLATE_ID}"
-                        },
-                        {
-                            "name": "NOTIFY_SERVICE_NOTIFY_API_KEY",
-                            "value": "${app-service-cshr-api__ENC_NOTIFY_SERVICE_NOTIFY_API_KEY}"
-                        },
-                        {
-                            "name": "NOTIFY_USERNAME",
-                            "value": "${app-service-cshr-api__ENC_NOTIFY_USERNAME}"
-                        },
-                        {
-                            "name": "NOTIFY_PASSWORD",
-                            "value": "${app-service-cshr-api__ENC_NOTIFY_PASSWORD}"
-                        },
-                        {
-                            "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
-                            "value": "true"
+                            "name": "WEBSITES_PORT",
+                            "value": "8080"
                         },
                         {
                             "name": "SPRING_PROFILES_ACTIVE",
-                            "value": "${app-service-cshr-api__SPRING_PROFILES_ACTIVE}"
-                        },
-                        {
-                            "name": "WEBSITES_PORT",
-                            "value": "8080"
+                            "value": "${app-service-cshr-scanning-service__SPRING_PROFILES_ACTIVE}"
                         }
                     
                     ]

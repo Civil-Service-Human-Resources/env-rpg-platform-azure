@@ -5,12 +5,14 @@
 set -eo pipefail
 
 export RG=lpgdomain
-export ENV=prod
+export ENV=dev
 export ZONE=cshr.digital
 export NAMES=(
     rpg-${ENV}-location-service
     rpg-${ENV}-cshr-api
     rpg-${ENV}-cshr-ats-adaptor
+    rpg-${ENV}-cshr-clamav
+    rpg-${ENV}-cshr-scanning-service
 )
 
 for name in ${NAMES[@]}; do 
@@ -23,10 +25,6 @@ for name in ${NAMES[@]}; do
     az network dns record-set cname set-record --cname ${name}.azurewebsites.net  --record-set-name ${name} --resource-group ${RG} --zone-name ${ZONE}
 done
 
-# Create reference to gov paas installed UI.
-echo "Creating CNAME for UI"
-az network dns record-set cname create --name find-civil-service-jobs --resource-group ${RG} --zone-name ${ZONE} --ttl 300
-az network dns record-set cname set-record --cname rpg-ci.cloudapps.digital --record-set-name find-civil-service-jobs --resource-group ${RG} --zone-name ${ZONE}
 
 
 

@@ -132,6 +132,10 @@
                         {
                             "name": "WEBSITES_PORT",
                             "value": 8989
+                        },
+                        {
+                            "name": "SPRING_PROFILES_ACTIVE",
+                            "value": "${app-service-location-service__SPRING_PROFILES_ACTIVE}"
                         }
                     ]
                 },

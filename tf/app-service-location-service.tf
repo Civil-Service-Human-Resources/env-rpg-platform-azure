@@ -38,6 +38,7 @@ data "template_file" "location_service_arm" {
       app-service-location-service__existingkeyvaultsecretname                = "${var.app-service-location-service__existingkeyvaultsecretname}"
       app-service-location-service__vaultname                                 = "${var.app-service-location-service__vaultname}"
       app-service-location-service__vaultresourcegroup                        = "${var.app-service-location-service__vaultresourcegroup}"
+      app-service-location-service__SPRING_PROFILES_ACTIVE                    = "${var.app-service-location-service__SPRING_PROFILES_ACTIVE}"
       application_name                                                        = "${var.application_name}"  
       environment__name                                                       = "${var.environment__name}"
       global__deployed_by                                                     = "${var.global__deployed_by}"
