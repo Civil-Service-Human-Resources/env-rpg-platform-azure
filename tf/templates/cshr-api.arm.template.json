@@ -189,6 +189,14 @@
                         {
                             "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
                             "value": "true"
+                        },
+                        {
+                            "name": "SPRING_PROFILES_ACTIVE",
+                            "value": "${app-service-cshr-api__SPRING_PROFILES_ACTIVE}"
+                        },
+                        {
+                            "name": "WEBSITES_PORT",
+                            "value": "8080"
                         }
                     
                     ]

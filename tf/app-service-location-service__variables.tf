@@ -45,3 +45,8 @@ variable "app-service-location-service__ENC_LOCATION_SERVICE_PASSWORD" {
     type = "string"
     description     = "Basic auth credentials a client needs to use to call location service"
 }
+
+variable "app-service-location-service__SPRING_PROFILES_ACTIVE" {
+  type = "string"
+  default = "prod"
+}

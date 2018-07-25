@@ -54,3 +54,8 @@ variable "app-service-cshr-scanning-service__WEBSITES_PORT" {
   description = "port to connect to clamav"
   default     = "8080"
 }
+
+variable "app-service-cshr-scanning-service__SPRING_PROFILES_ACTIVE" {
+  type = "string"
+  default = "prod"
+}

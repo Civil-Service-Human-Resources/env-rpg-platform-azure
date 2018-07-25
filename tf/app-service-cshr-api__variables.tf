@@ -94,3 +94,7 @@ variable "app-service-cshr-api__ENC_NOTIFY_PASSWORD" {
     type = "string"
 }
  
+variable "app-service-cshr-api__SPRING_PROFILES_ACTIVE" {
+  type = "string"
+  default = "prod"
+}

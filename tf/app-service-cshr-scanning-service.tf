@@ -33,6 +33,7 @@ data "template_file" "scanning-service_arm" {
     app-service-cshr-scanning-service__existingkeyvaultsecretname = "${var.app-service-cshr-scanning-service__existingkeyvaultsecretname}"
     app-service-cshr-scanning-service__vaultname                  = "${var.app-service-cshr-scanning-service__vaultname}"
     app-service-cshr-scanning-service__vaultresourcegroup         = "${var.app-service-cshr-scanning-service__vaultresourcegroup}"
+    app-service-cshr-scanning-service__SPRING_PROFILES_ACTIVE     = "${var.app-service-cshr-scanning-service__SPRING_PROFILES_ACTIVE}"
     application_name                                              = "${var.application_name_scanning-service}"
     app-service-cshr-scanning-service__WEBSITES_PORT              = "${var.app-service-cshr-scanning-service__WEBSITES_PORT}"
     environment__name                                             = "${var.environment__name}"
