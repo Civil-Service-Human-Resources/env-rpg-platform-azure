@@ -5,7 +5,7 @@
 set -eo pipefail
 
 export RG=lpgdomain
-export ENV=dev
+export ENV=prod
 export ZONE=cshr.digital
 export NAMES=(
     rpg-${ENV}-location-service
