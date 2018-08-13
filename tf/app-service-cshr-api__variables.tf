@@ -98,3 +98,7 @@ variable "app-service-cshr-api__SPRING_PROFILES_ACTIVE" {
   type = "string"
   default = "prod"
 }
+
+variable "app-service-cshr-api__ENC_AUTHENTICATION_SERVICE_SECRET" {
+  type = "string"
+}

@@ -37,5 +37,5 @@ echo "##Creating the storage container: rpg-sc-${suffix}"
 az storage container create \
   --name rpg-sc-${azure_default_region}-${suffix} \
   --account-name rpgsabuildterraform \
-  --public-access off \
+  --public-access off 
 #tags not currently an option for storage container
