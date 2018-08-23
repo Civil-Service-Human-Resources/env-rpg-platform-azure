@@ -1,7 +1,7 @@
-#https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image
+# #https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image
 
-## Heavily borrowed from LPG XAPI - https://raw.githubusercontent.com/Civil-Service-Human-Resources/lpg-terraform-paas/master/modules/learning-locker-xapi/main.tf
-# Reference here = https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-custom-domain-and-ssl
+# ## Heavily borrowed from LPG XAPI - https://raw.githubusercontent.com/Civil-Service-Human-Resources/lpg-terraform-paas/master/modules/learning-locker-xapi/main.tf
+# # Reference here = https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-custom-domain-and-ssl
 
 variable "application_name_ats" {
   type    = "string"
@@ -12,14 +12,6 @@ resource "azurerm_resource_group" "rg_ats" {
   name     = "${var.global__service_id}-${var.environment__name}-rg-${var.application_name_ats}"
   location = "${var.global__region}"
 }
-
-#resource "azurerm_dns_cname_record" "cshr_ats_adaptor_cname" {
-#  name                = "${var.global__service_id}-${var.environment__name}-${var.application_name_ats}"
-#  zone_name           = "${var.global__domain}"
-#  resource_group_name = "lpgdomain"
-#  ttl                 = 300
-#  record              = "${var.global__service_id}-${var.environment__name}-${var.application_name_ats}.azurewebsites.net"
-#}
 
 data "template_file" "cshr_ats_adaptor_arm" {
   template = "${file("${path.module}/templates/cshr-ats-adaptor.arm.template.json")}"

@@ -88,13 +88,6 @@ variable "app-service-cshr-ats-adaptor__ATS_REQUEST_ENDPOINT" {
   type = "string"
 }
 
-#variable "app-service-cshr-ats-adaptor__CSHR_API_SERVICE_DEPARTMENT_FINDALL_ENDPOINT" { 
-#    type = "string" 
-#}
-#
-#variable "app-service-cshr-ats-adaptor__CSHR_API_SERVICE_VACANCY_SAVE_ENDPOINT" {
-#     type = "string" 
-#}
 
 variable "app-service-cshr-ats-adaptor__CSHR_JOBRUN_AUDIT_DIRECTORY" {
   type    = "string"
