@@ -1,6 +1,6 @@
-#https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image
+# #https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image
 
-## Heavily borrowed from LPG XAPI - https://raw.githubusercontent.com/Civil-Service-Human-Resources/lpg-terraform-paas/master/modules/learning-locker-xapi/main.tf
+# ## Heavily borrowed from LPG XAPI - https://raw.githubusercontent.com/Civil-Service-Human-Resources/lpg-terraform-paas/master/modules/learning-locker-xapi/main.tf
 
 variable "application_name_api" {
     type        = "string"
@@ -11,15 +11,6 @@ resource "azurerm_resource_group" "rg_api" {
   name     = "${var.global__service_id}-${var.environment__name}-rg-${var.application_name_api}"
   location = "${var.global__region}"
 }
-
-#resource "azurerm_dns_cname_record" "cname_api" {
-#  name                = "${var.global__service_id}-${var.environment__name}-${var.application_name_api}"
-#  zone_name           = "${var.global__domain}"
-#  resource_group_name = "lpgdomain"
-#  ttl                 = 300
-#  record              = "${var.global__service_id}-${var.environment__name}-${var.application_name_api}.azurewebsites.net"
-#}
-
 
 data "template_file" "api_arm" {
   template = "${file("${path.module}/templates/cshr-api.arm.template.json")}"

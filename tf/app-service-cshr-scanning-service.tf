@@ -1,6 +1,6 @@
-#https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image
+# #https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image
 
-## Heavily borrowed from LPG XAPI - https://raw.githubusercontent.com/Civil-Service-Human-Resources/lpg-terraform-paas/master/modules/learning-locker-xapi/main.tf
+# ## Heavily borrowed from LPG XAPI - https://raw.githubusercontent.com/Civil-Service-Human-Resources/lpg-terraform-paas/master/modules/learning-locker-xapi/main.tf
 
 variable "application_name_scanning-service" {
   type    = "string"

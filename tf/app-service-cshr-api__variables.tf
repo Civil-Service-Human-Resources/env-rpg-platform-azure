@@ -17,10 +17,10 @@ variable "app-service-cshr-api__ENC_docker_registry_password" {
     description = "the ACR password to pull the image"
 }
    
-#variable "app-service-cshr-api__datasource_url" {
+# variable "app-service-cshr-api__datasource_url" {
 #    type        = "string"
 #    description = "jdbc url for postgres instance"    
-#}
+# }
 
 variable "app-service-cshr-api__ENC_datasource_username" {
     type        = "string"
